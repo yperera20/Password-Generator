@@ -23,7 +23,7 @@ A simple web-based password generator that allows users to generate secure passw
 
 ## Website :
 
-To access the password generator: 
+To access the password generator: https://yperera20.github.io/Password-Generator/
 
 ![Alt text](image.png)
 

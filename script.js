@@ -15,8 +15,7 @@ function generatePassword() {
 
   // Validate password length
   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-    alert("Please enter a valid password length between 8 and 128 characters.");
-    return "";
+    return null; // Return null to indicate an invalid password length
   }
 
   // Prompt for character types to include
@@ -27,8 +26,7 @@ function generatePassword() {
 
   // Validate that at least one character type is selected
   if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
-    alert("You must select at least one character type to include in the password.");
-    return "";
+    return null; // Return null to indicate that no character type is selected
   }
 
   // Build a character set based on selected criteria
@@ -53,7 +51,11 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  if (password !== null) {
+    passwordText.value = password;
+  } else {
+    alert("Invalid input. Please try again.");
+  }
 }
 
 // Add event listener to generate button
